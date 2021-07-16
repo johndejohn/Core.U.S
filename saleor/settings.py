@@ -53,7 +53,7 @@ MANAGERS = ADMINS
 
 _DEFAULT_CLIENT_HOSTS = "localhost,127.0.0.1"
 
-ALLOWED_CLIENT_HOSTS = os.environ.get("ALLOWED_CLIENT_HOSTS")
+ALLOWED_CLIENT_HOSTS = os.environ.get("ALLOWED_CLIENT_HOSTS, https://uyghur-store.herokuapp.com, https://demo-saleor-dash.herokuapp.com, https://storefront-uyghur-store.herokuapp.com")
 if not ALLOWED_CLIENT_HOSTS:
     if DEBUG:
         ALLOWED_CLIENT_HOSTS = _DEFAULT_CLIENT_HOSTS
@@ -207,7 +207,7 @@ TEMPLATES = [
 ]
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("123456789")
 
 if not SECRET_KEY and DEBUG:
     warnings.warn("SECRET_KEY not configured, using a random temporary key.")
@@ -413,7 +413,7 @@ DEFAULT_MAX_EMAIL_DISPLAY_NAME_LENGTH = 78
 
 COUNTRIES_OVERRIDE = {"EU": "European Union"}
 
-OPENEXCHANGERATES_API_KEY = os.environ.get("OPENEXCHANGERATES_API_KEY")
+OPENEXCHANGERATES_API_KEY = os.environ.get("fcfab3282e4d4e4c8b5ed72cafeb42bd")
 
 GOOGLE_ANALYTICS_TRACKING_ID = os.environ.get("GOOGLE_ANALYTICS_TRACKING_ID")
 
