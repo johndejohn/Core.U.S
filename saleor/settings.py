@@ -123,6 +123,7 @@ LANGUAGES = [
     ("th", "Thai"),
     ("tr", "Turkish"),
     ("uk", "Ukrainian"),
+    ("ug", "ئۇيغۇرچە"),
     ("vi", "Vietnamese"),
     ("zh-hans", "Simplified Chinese"),
     ("zh-hant", "Traditional Chinese"),
