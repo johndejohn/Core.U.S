@@ -161,7 +161,7 @@ ENABLE_ACCOUNT_CONFIRMATION_BY_EMAIL = get_bool_from_env(
     "ENABLE_ACCOUNT_CONFIRMATION_BY_EMAIL", True
 )
 
-ENABLE_SSL = get_bool_from_env("ENABLE_SSL", False)
+ENABLE_SSL = get_bool_from_env("ENABLE_SSL", True)
 
 if ENABLE_SSL:
     SECURE_SSL_REDIRECT = not DEBUG
