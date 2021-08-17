@@ -69,6 +69,7 @@ INTERNAL_IPS = get_list(os.environ.get("INTERNAL_IPS", "127.0.0.1"))
 DATABASES = {
     "default": dj_database_url.config(
         default="postgres://apiuyghurstore01:apiuyghurstore01@apiuyghurstore01.cy56ega9azrv.us-east-2.rds.amazonaws.com:5432/apiuyghurstore01", conn_max_age=600
+        api2db="postgres://apiuyghurstore02:apiuyghurstore02@apiuyghurstore02.cwf99c8lsgsd.us-east-2.rds.amazonaws.com:5432/apiuyghurstore02", conn_max_age=600
     )
 }
 
