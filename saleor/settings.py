@@ -53,7 +53,7 @@ MANAGERS = ADMINS
 
 _DEFAULT_CLIENT_HOSTS = "localhost,127.0.0.1"
 
-ALLOWED_CLIENT_HOSTS = os.environ.get("ALLOWED_CLIENT_HOSTS, *")
+ALLOWED_CLIENT_HOSTS = os.environ.get("127.0.0.1, c.uyghur.store, *")
 if not ALLOWED_CLIENT_HOSTS:
     if DEBUG:
         ALLOWED_CLIENT_HOSTS = _DEFAULT_CLIENT_HOSTS
@@ -144,7 +144,7 @@ if not EMAIL_URL and SENDGRID_USERNAME and SENDGRID_PASSWORD:
         SENDGRID_PASSWORD,
     )
 email_config = dj_email_url.parse(
-    EMAIL_URL or "console://demo@example.com:console@example/"
+    EMAIL_URL or "console://mail@uyghur.store:console@mail/"
 )
 
 EMAIL_FILE_PATH = email_config["EMAIL_FILE_PATH"]
@@ -215,6 +215,7 @@ if not SECRET_KEY and DEBUG:
     SECRET_KEY = get_random_secret_key()
 
 MIDDLEWARE = [
+    "django_cookies_samesite.middleware.CookiesSameSite",
     "django.middleware.security.SecurityMiddleware",
     "django.middleware.common.CommonMiddleware",
     "saleor.core.middleware.request_time",
@@ -436,7 +437,7 @@ TEST_RUNNER = "saleor.tests.runner.PytestTestRunner"
 
 PLAYGROUND_ENABLED = get_bool_from_env("PLAYGROUND_ENABLED", True)
 
-ALLOWED_HOSTS = get_list(os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1, 18.224.148.110, api.uyghur.store"))
+ALLOWED_HOSTS = get_list(os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1, 18.224.148.110, api.uyghur.store, *"))
 ALLOWED_GRAPHQL_ORIGINS = get_list(os.environ.get("ALLOWED_GRAPHQL_ORIGINS", "*"))
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
